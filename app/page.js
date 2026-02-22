@@ -3,6 +3,7 @@
 import { useState, useCallback, useMemo } from "react";
 import CASE_DOCUMENTS from "../data/documents";
 import CASE_LETTERS from "../data/letters";
+import HARBOUR_BG from "../data/harbour-bg";
 
 
 const DOMAINS = [
@@ -323,8 +324,8 @@ export default function App() {
   const caseComplete = DOMAINS.every(d => current.scores[d.id] != null) && current.acceptability != null;
 
   return (
-    <div className="min-h-screen bg-orange-50">
-      <div className="max-w-4xl mx-auto px-4 py-6">
+    <div className="min-h-screen bg-orange-50" style={{backgroundImage: `url(${HARBOUR_BG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+      <div className="max-w-4xl mx-auto px-4 py-6" style={{backgroundColor: 'rgba(255,249,235,0.85)', minHeight: '100vh'}}>
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-center gap-3 mb-1">
